@@ -1,0 +1,8 @@
+---
+
+- name: "Update dotfiles"
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: /home/{{ ansible_user }}/.dotfiles
+    update: yes
+    version: master

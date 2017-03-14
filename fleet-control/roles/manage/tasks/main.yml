@@ -1,0 +1,13 @@
+---
+# This playbook performs all fleet management tasks on hosts
+
+# Gather variables
+- include_vars: "{{ item }}"
+  with_first_found:
+    - "../vars/{{ ansible_distribution }}.yml"
+    - "../vars/{{ ansible_os_family }}.yml"
+    - "../vars/default.yml"
+- include_vars: "../vars/common.yml"
+
+# Start the setup process
+- include: update-dotfiles.yml

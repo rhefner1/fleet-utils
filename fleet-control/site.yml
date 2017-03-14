@@ -1,0 +1,7 @@
+---
+# This playbook deploys fleet-control
+
+- name: Install and configure fleet-control
+  hosts: all
+  roles:
+    - manage
